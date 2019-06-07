@@ -1,0 +1,33 @@
+{
+  "name": "WifiChatSqliteDB",
+  "version": "1.0.0",
+  "description": "Deployable sqlite3 DB for WiFiChat App",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elderen/WifiChatSqliteDB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elderen/WifiChatSqliteDB/issues"
+  },
+  "homepage": "https://github.com/elderen/WifiChatSqliteDB#readme",
+  "devDependencies": {
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.3"
+  },
+  "dependencies": {
+    "better-sqlite3": "^5.4.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1",
+    "path": "^0.12.7",
+    "socket.io": "^2.2.0"
+  }
+}
