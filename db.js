@@ -2,7 +2,7 @@ const path = require('path');
 const Database = require('better-sqlite3');
 
 // Sqlite database connection and establish table
-const db = new Database(path.join(__dirname, 'wifichat.db'), { verbose: console.log });
+const db = new Database(path.join(__dirname, 'wifichat.db'));
 db.prepare("CREATE TABLE IF NOT EXISTS wc (room TEXT, user TEXT, message TEXT, time DATETIME DEFAULT CURRENT_TIMESTAMP)").run();
 
 // Insert method. Use .run(room, user, message)

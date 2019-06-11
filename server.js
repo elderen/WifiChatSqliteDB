@@ -14,12 +14,12 @@ const io = require('socket.io')(server);
 
 // Single Websocket Connection
 io.on('connection', (socket) => {
-  console.log('<---- Socket Io Connection Established ------>')
-  console.log('** Console Id: ', console.id);
+  // console.log('<---- Socket Io Connection Established ------>')
+  // console.log('** Console Id: ', console.id);
 
   emit(socket)
   socket.on('message', (newLog) => {
-    console.log('new-------> ', newLog)
+    // console.log('new-------> ', newLog)
     insert.run(newLog.room, newLog.user, newLog.message)
     emit(socket)
   });
@@ -36,5 +36,5 @@ app.use(cors());
 
 // Server
 server.listen(port, () => {
-  console.log(`Listening on port ${port}... ------>`);
+  // console.log(`Listening on port ${port}... ------>`);
 })
