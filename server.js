@@ -1,13 +1,14 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
+const port = process.env.PORT || 3000;
 
 // Better-SQLite3 methods
-// insert.run(room, user, message)
 const { insert, retrieve } = require('./db.js');
 
 // Websocket | HTTP | express
 const app = express();
+app.set('port', port)
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
@@ -33,8 +34,7 @@ var emit =  (socket) => {
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(cors());
 
-// Server Port
-const port = process.env.PORT || 3000;
+// Server
 server.listen(port, () => {
   console.log(`Listening on port ${port}... ------>`);
 })
